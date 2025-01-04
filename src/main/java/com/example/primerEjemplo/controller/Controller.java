@@ -24,7 +24,7 @@ public class Controller {
     @GetMapping("/hola/{name}")
     public String devolverSaludo(@PathVariable String name) throws Exception {
         if(!nameValidator.validate(name)){
-            throw new Exception("INVALID");
+            throw new Exception("noValid");
         }
 
         return String.format("otro mensaje guy: %s", name);
