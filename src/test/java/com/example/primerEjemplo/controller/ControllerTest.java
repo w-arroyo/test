@@ -27,10 +27,10 @@ public class ControllerTest {
         Assertions.assertThat(response).isEqualTo("otro mensaje guy: pa");
     }
     @Test
-    void testDevolverSaludoFalse() throws  Exception{
+    void testDevolverSaludoFalse(){
         Mockito.when(nameValidator.validate("a")).thenReturn(false);
         Assertions.assertThatThrownBy(() -> controller.devolverSaludo("a"))
                 .isInstanceOf(Exception.class)
-                .hasMessage("INVALID");
+                .hasMessage("noValid");
     }
 }
